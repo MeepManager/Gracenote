@@ -94,7 +94,7 @@ namespace GracenoteCase
                     }
 
                     //Create the team afterwards
-                    if (data[8] == "Home")
+                    if (data[8] == "Home" && data[13] != "NULL")
                     {
                         if (match.HomeTeam == null)
                         {
@@ -102,7 +102,7 @@ namespace GracenoteCase
                         }
                         match.HomeTeam.AddPerson(Convert.ToInt32(data[11]), data[12], data[13], data[14]); //add player to home team
                     }
-                    else if (data[8] == "Away")
+                    else if (data[8] == "Away" && data[13] != "NULL")
                     {
                         if (match.AwayTeam == null)
                         {
