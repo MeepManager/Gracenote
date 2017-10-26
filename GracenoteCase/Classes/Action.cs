@@ -37,6 +37,7 @@ namespace GracenoteCase.Classes
             Period = (IsNULL(data[5]) == false) ? data[5] : null;
             StartTime = (IsNULL(data[6]) == false) ? Convert.ToInt32(data[6]) : (int?)null;
             EndTime = (IsNULL(data[7]) == false) ? Convert.ToInt32(data[7]) : (int?)null;
+            HomeOrAway = data[8];
 
             PersonID = Convert.ToInt32(data[11]);
             SubpersonID = (IsNULL(data[17]) == false) ? Convert.ToInt32(data[17]) : (int?)null;

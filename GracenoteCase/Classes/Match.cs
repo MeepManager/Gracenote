@@ -28,7 +28,31 @@ namespace GracenoteCase.Classes
 
         public void SetLabel()
         {
-            Label = Competition + " " + HomeTeam.Name + " tegen " + AwayTeam.Name;
+            Label = Competition + " " + HomeTeam.Name + " vs " + AwayTeam.Name;
+        }
+    }
+
+    public class Statistic
+    {
+        public string action = "";
+        public int home = 0;
+        public int away = 0;
+
+        public Statistic(string v)
+        {
+            this.action = v;
+        }
+        public void Add(Action act)
+        {
+            if (act.HomeOrAway == "Home")
+                home++;
+            else
+                away++;
+        }
+
+        public override string ToString()
+        {
+            return home + " - " + away;
         }
     }
 }

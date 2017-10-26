@@ -19,15 +19,25 @@ namespace GracenoteCase.Classes
             Players = new Dictionary<int, Person>(); //Initialize the dictionary
         }
 
-        public Person GetPerson(Person person)
+        public void AddPerson(int personID, string name, string function, string shirtNr)
+        {
+            Person player = GetPerson(personID);
+            player.Name = name;
+            if(function != "NULL")
+                player.Function = function;
+            if (shirtNr != "NULL")
+                player.ShirtNr = Convert.ToInt32(shirtNr);
+        }
+        public Person GetPerson(int personID)
         {
             Person player;
 
-            Players.TryGetValue(person.ID, out player);
+            Players.TryGetValue(personID, out player);
             if (player == null)
-            { 
-                Players.Add(person.ID, person);
-                player = person;
+            {
+                player = new Person();
+                player.ID = personID;
+                Players.Add(personID, player);
             }
             return player;
         }

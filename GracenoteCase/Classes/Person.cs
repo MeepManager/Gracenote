@@ -11,6 +11,6 @@ namespace GracenoteCase.Classes
         public int ID { get; set; }
         public string Name { get; set; }
         public string Function { get; set; }
-        public int ShirtNr { get; set; }
+        public int? ShirtNr { get; set; }
     }
 }
