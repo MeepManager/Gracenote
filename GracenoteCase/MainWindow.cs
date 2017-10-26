@@ -51,14 +51,14 @@ namespace GracenoteCase
             dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             List<string> homeTeam = new List<string>();
-            foreach(var player in selectedMatch.HomeTeam.Players.Values)
+            foreach(var player in selectedMatch.HomeTeam.Players.Values.OrderBy(x => x.ShirtNr))
             {
                 homeTeam.Add(player.ShirtNr + " " + player.Name);
             }
             List<string> awayTeam = new List<string>();
-            foreach (var player in selectedMatch.AwayTeam.Players.Values)
+            foreach (var player in selectedMatch.AwayTeam.Players.Values.OrderBy(x => x.ShirtNr))
             {
-                awayTeam.Add(player.ShirtNr + " " + player.Name);
+                awayTeam.Add(player.ShirtNr + " " + player.Name +" " +player.Function);
             }
 
             listBox1.DataSource = homeTeam;
